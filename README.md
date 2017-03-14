@@ -14,11 +14,15 @@ get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
 ## Running this sample
 
 1. If you have Python installed, you can use `pip install azure-cli` from the command-line to install Azure CLI. You can also refer to the [Azure CLI How-to guide](https://docs.microsoft.com/en-us/azure/storage/storage-azure-cli). Once the Azure CLI has been installed, you will be able to use the azure command from your command-line interface (Bash, Terminal, Command prompt) to access the Azure CLI commands.
+
 2. Download or clone this repo.
  
  `git clone https://github.com/Azure-Samples/storage-cli-2-getting-started.git`
+
 3. Edit a script you would like to use. This repo provides batch scripts for Windows Command Line and shell scripts for Mac and Linux terminals.
+
 4. Within the script, provide the appropriate values for each variable (e.g. Storage Account Name, Storage Account Key, etc.) Note: The angled brackets should not be included in the values you provide.
+
 5. Run the script in your terminal of choice. For example, in Windows Command Line: `C:\storage-cli-getting-started\Batch Scripts>AzureBlobs.bat`.
 
 ## More information
