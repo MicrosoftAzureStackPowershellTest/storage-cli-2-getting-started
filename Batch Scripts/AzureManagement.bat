@@ -6,13 +6,13 @@ rem Provide your subscription ID
 rem To retrieve your subscription ID, run the following two commands:
   rem azure login
   rem azure account list
-set subscription_id=<Subscription ID>
+set subscription_id=84e90fc7-89e1-464f-89a5-d527f5946ecb
 
 rem Provide the name of the resource group that will be created.
-set resource_group_name=<Resource Group Name>
+set resource_group_name=newrg
 
 rem Provide the name of the Storage account that will be created.
-set storage_account_name=<Storage Account Name>
+set storage_account_name=newan
 
 rem Specify the SKU of the Storage account to create and another type that will be used for updating the Storage account. Valid values are:
   rem Premium_LRS,
@@ -21,13 +21,13 @@ rem Specify the SKU of the Storage account to create and another type that will 
   rem Standard_RAGRS,
   rem Standard_ZRS
 set sku="Standard_LRS"
-set new_sku="Standard_GRS"
+set new_sku="Premium_LRS"
 
 rem Specify the location of the Storage account to create.
 rem To view available locations for Storage, go to http://go.microsoft.com/fwlink/?LinkId=786652 or run the following command:
   rem azure provider show Microsoft.Storage
 rem NOTE: Location names must be lowercase with no spaces. For example, East US = eastus.
-set location=<Location>
+set location=redmond
 
 echo "1. Set default Azure subscription."
 call az account set --subscription %subscription_id%
@@ -48,13 +48,13 @@ echo "6. Get access keys for Azure Storage account."
 call az storage account keys list --resource-group %resource_group_name% -n %storage_account_name%
 
 echo "7. Renew primary access key for Azure Storage account."
-call az storage account keys renew --resource-group %resource_group_name% --primary -n %storage_account_name%
+call az storage account keys renew --resource-group %resource_group_name% --key primary -n %storage_account_name%
 
 echo "8. Print Azure Storage connection string."
-call az storage account show connectionstring --resource-group %resource_group_name% -n %storage_account_name%
+call az storage account show-connection-string --resource-group %resource_group_name% -n %storage_account_name%
 
 echo "9. Update Storage account type."
-call az storage account set --resource-group %resource_group_name% --sku %new_sku% -n %storage_account_name%
+call az storage account update --resource-group %resource_group_name% --sku %new_sku% -n %storage_account_name%
 call az storage account show --resource-group %resource_group_name% -n %storage_account_name%
 
 echo "10. Delete Storage account."

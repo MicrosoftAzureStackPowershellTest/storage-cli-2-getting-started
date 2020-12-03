@@ -4,22 +4,22 @@ rem For more documentation, refer to http://go.microsoft.com/fwlink/?LinkId=7863
 rem For the Azure CLI reference, see http://go.microsoft.com/fwlink/?LinkId=786325
 
 rem Provide the name of your Storage account.
-set AZURE_STORAGE_ACCOUNT=<StorageAccountName>
+set AZURE_STORAGE_ACCOUNT=testsa
 
 rem Provide your Storage account key.
-set AZURE_STORAGE_KEY=<StorageAccountKey>
+set AZURE_STORAGE_KEY=fdctxqHO3Imbn/qZ16A1x7NJKHZ0QSaytdaA7LO4QshdizKiwmCaNCr3vTj0+Hg5Ctq4kZLEVKX+10rVhmn/pg==
 
 rem Provide a name for your new container.
-set container_name=<container name>
+set container_name=container1
 
 rem Provide a name for your new blob.
-set blob_name=<blob name>
+set blob_name=blob1
 
 rem Provide the full path to a file you want to upload.
-set file_to_upload=<file name>
+set file_to_upload=C:\azure-cli\README.md
 
 rem Provide the full path to a directory you wish to use for downloaded blobs.
-set destination_folder=<folder name>
+set destination_folder=D:
 
 echo "1. Create a new container."
 call az storage container create -n %container_name%
