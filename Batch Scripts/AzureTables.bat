@@ -4,13 +4,13 @@ rem For more documentation, refer to http://go.microsoft.com/fwlink/?LinkId=7863
 rem For the Azure CLI reference, refer to http://go.microsoft.com/fwlink/?LinkId=786325
 
 rem Provide the name of your Storage account.
-set AZURE_STORAGE_ACCOUNT=<StorageAccountName>
+set AZURE_STORAGE_ACCOUNT=testsa
 
 rem Provide your Storage account key.
-set AZURE_STORAGE_KEY=<StorageAccountKey>
+set AZURE_STORAGE_KEY=fdctxqHO3Imbn/qZ16A1x7NJKHZ0QSaytdaA7LO4QshdizKiwmCaNCr3vTj0+Hg5Ctq4kZLEVKX+10rVhmn/pg==
 
 rem Provide a name for your new table.
-set table_name=<Table Name>
+set table_name=newtable
 
 echo "1. Create a new table."
 call az storage table create -n %table_name%
